@@ -20,7 +20,7 @@ export default function Info({ onToggleTheme, theme }) {
 
         <a
           className="website"
-          href="https://federicocelia.website"
+          href="https://github.com/federicocelia"
           target="_blank"
           rel="noreferrer"
         >
@@ -47,7 +47,7 @@ export default function Info({ onToggleTheme, theme }) {
 
           <a
             className="contact-link linkedin"
-            href="https://www.linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/federico-celia-13b3851a8/"
             target="_blank"
             rel="noreferrer"
           >
