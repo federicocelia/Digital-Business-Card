@@ -140,7 +140,7 @@ This project practices:
 ## 👤 Author
 
 **Federico Celia**  
-Frontend Developer (in progress)  
+Frontend / Full‑Stack developer in progress
 🔗 https://www.linkedin.com/in/federico-celia-13b3851a8/
 
 ---
