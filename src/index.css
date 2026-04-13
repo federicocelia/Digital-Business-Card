@@ -1,8 +1,16 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
+  border: 0;
   box-sizing: border-box;
   margin: 0;
-  border: 0;
 }
+
+/* =========================================================
+   DESIGN TOKENS / CSS VARIABLES
+   ========================================================= */
 
 :root {
   /* Page */
@@ -14,24 +22,29 @@
   --color-card-footer-bg: #161619;
 
   /* Text */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #f5f5f5;
-  --color-text-muted: #dcdcdc;
   --color-text-accent: #f3bf99;
   --color-text-dark: #1e1f26;
+  --color-text-muted: #dcdcdc;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f5f5f5;
 
   /* Buttons */
   --color-btn-bg-light: #dcdcdc;
-  --color-btn-bg-white: #ffffff;
   --color-btn-bg-linkedin: #5093e2;
+  --color-btn-bg-white: #ffffff;
 
   /* Icons */
-  --color-icon-muted: #918e9b;
   --color-icon-light: #ffffff;
+  --color-icon-muted: #918e9b;
 
+  /* GitHub icon */
   --github-bg: #918e9b;
   --github-icon: #161619;
 }
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 body {
   background-color: var(--color-page-bg);
@@ -39,21 +52,34 @@ body {
   font-family: inter;
 }
 
+/* =========================================================
+   CARD LAYOUT (BASE)
+   ========================================================= */
+
 .info-section,
 .interests-section,
 .about-section,
 .footer {
+  background-color: var(--color-card-bg);
   display: flex;
   flex-direction: column;
-  max-width: 317px;
   margin: 0 auto;
-  background-color: var(--color-card-bg);
+  max-width: 317px;
 }
 
+/* =========================================================
+   INFO / HEADER SECTION
+   ========================================================= */
+
 .info-section {
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
+
+/* =========================================================
+   ABOUT & INTERESTS SECTIONS
+   ========================================================= */
 
 .about-section,
 .interests-section {
@@ -64,74 +90,106 @@ body {
   padding-bottom: 24px;
 }
 
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
 .card-picture {
   width: 100%;
 }
 
+/* =========================================================
+   FOOTER / SOCIALS
+   ========================================================= */
+
 .footer {
+  background-color: var(--color-card-footer-bg);
   flex-direction: row;
   gap: 24px;
   justify-content: center;
-  background-color: var(--color-card-footer-bg);
 }
 
 .social-icon svg {
-  max-width: 25px;
   color: var(--color-icon-light);
   fill: var(--color-icon-muted);
+  max-width: 25px;
 }
 
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
 .name {
-  font-size: 25px;
-  margin-top: 21px;
-  margin-bottom: 6.19px;
   color: var(--color-text-primary);
+  font-size: 25px;
+  margin-bottom: 6.19px;
+  margin-top: 21px;
 }
 
 .job-title {
+  color: var(--color-text-accent);
   font-size: 12.8px;
   font-weight: 300;
-  color: var(--color-text-accent);
   margin-bottom: 8.81px;
 }
 
 .website {
-  font-size: 10.24px;
-  text-decoration: none;
   color: var(--color-text-secondary);
   cursor: pointer;
+  font-size: 10.24px;
+  text-decoration: none;
 }
+
+.section-title {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.section-text {
+  font-size: 10.24px;
+  line-height: 1.5;
+  margin-bottom: 21px;
+}
+
+/* =========================================================
+   CALL TO ACTION (EMAIL / LINKEDIN)
+   ========================================================= */
 
 .call-to-action {
   display: flex;
-  width: 100%;
-  padding: 0 36px;
   justify-content: space-between;
+  padding: 0 36px;
+  width: 100%;
+}
+
+.contact-link {
+  align-items: center;
+  background-color: var(--color-btn-bg-light);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  gap: 8px;
+  justify-content: center;
+  margin-block: 15px 33px;
+  padding: 9px 0;
+  text-decoration: none;
+  width: 114px;
 }
 
 .contact-link span {
-  font-size: 14px;
   display: inline-block;
+  font-size: 14px;
 }
 
 .contact-link svg {
   display: inline-block;
 }
 
-.contact-link {
-  display: flex;
-  padding: 9px 0;
-  margin-block: 15px 33px;
-  gap: 8px;
-  background-color: var(--color-btn-bg-light);
-  align-items: center;
-  justify-content: center;
-  width: 114px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: inherit;
-  cursor: pointer;
-}
+/* =========================================================
+   BUTTON VARIANTS
+   ========================================================= */
 
 .email {
   background-color: var(--color-btn-bg-white);
@@ -147,17 +205,47 @@ body {
   fill: var(--color-icon-light);
 }
 
-.section-title {
-  font-size: 16px;
-  color: var(--color-text-secondary);
-  margin-bottom: 5px;
+/* =========================================================
+   THEME TOGGLE BUTTON
+   ========================================================= */
+
+#theme-toggle {
+  background: var(--color-btn-bg-light);
+  border-radius: 6px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.section-text {
-  font-size: 10.24px;
-  line-height: 1.5;
-  margin-bottom: 21px;
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--color-btn-bg-linkedin);
+  outline-offset: 2px;
 }
+
+/* =========================================================
+   THEME OVERRIDES — BUTTON
+   ========================================================= */
+
+[data-theme="light"] #theme-toggle {
+  background: var(--color-page-bg);
+  color: var(--color-btn-bg-white);
+}
+
+[data-theme="dark"] #theme-toggle {
+  background: var(--color-btn-bg-light);
+  color: var(--color-text-dark);
+}
+
+/* =========================================================
+   LIGHT THEME VARIABLES
+   ========================================================= */
 
 [data-theme="light"] {
   /* Page */
@@ -169,23 +257,28 @@ body {
   --color-card-footer-bg: #d5d4d8;
 
   /* Text */
+  --color-text-accent: #f47d27;
+  --color-text-muted: #6b6b6b;
   --color-text-primary: #1e1f26;
   --color-text-secondary: #4a4a4a;
-  --color-text-muted: #6b6b6b;
-  --color-text-accent: #f47d27;
 
   /* Buttons */
   --color-btn-bg-light: #e5e5e5;
-  --color-btn-bg-white: #ffffff;
   --color-btn-bg-linkedin: #297fe5;
+  --color-btn-bg-white: #ffffff;
 
   /* Icons */
-  --color-icon-muted: #918e9b;
   --color-icon-light: #ffffff;
+  --color-icon-muted: #918e9b;
 
+  /* GitHub icon */
   --github-bg: #918e9b;
   --github-icon: #d5d4d8;
 }
+
+/* =========================================================
+   LIGHT THEME ELEMENT OVERRIDES
+   ========================================================= */
 
 [data-theme="light"] .linkedin {
   color: var(--color-btn-bg-white);

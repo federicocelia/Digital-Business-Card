@@ -1,9 +1,18 @@
 import federicoImg from "../src/assets/federico_celia.jpg";
 
-export default function ProfileHeader() {
+export default function Info({ onToggleTheme, theme }) {
   return (
     <>
       <section className="info-section">
+        <button
+          id="theme-toggle"
+          type="button"
+          onClick={onToggleTheme}
+          aria-pressed={theme === "light"}
+        >
+          {theme === "light" ? "Dark" : "Light"}
+        </button>
+
         <img className="card-picture" alt="Federico Celia" src={federicoImg} />
 
         <h1 className="name">Federico Celia</h1>
