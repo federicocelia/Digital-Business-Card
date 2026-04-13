@@ -28,6 +28,9 @@
   /* Icons */
   --color-icon-muted: #918e9b;
   --color-icon-light: #ffffff;
+
+  --github-bg: #161619;
+  --github-icon: #ffffff;
 }
 
 body {
@@ -154,4 +157,44 @@ body {
   font-size: 10.24px;
   line-height: 1.5;
   margin-bottom: 21px;
+}
+
+[data-theme="light"] {
+  /* Page */
+  --color-page-bg: #23252c;
+  --color-page-text: #2b283a;
+
+  /* Card */
+  --color-card-bg: #f5f5f5;
+  --color-card-footer-bg: #d5d4d8;
+
+  /* Text */
+  --color-text-primary: #1e1f26;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6b6b6b;
+  --color-text-accent: #f47d27;
+
+  /* Buttons */
+  --color-btn-bg-light: #e5e5e5;
+  --color-btn-bg-white: #ffffff;
+  --color-btn-bg-linkedin: #297fe5;
+
+  /* Icons */
+  --color-icon-muted: #918e9b;
+  --color-icon-light: #ffffff;
+
+  --github-bg: #918e9b;
+  --github-icon: #d5d4d8;
+}
+
+[data-theme="light"] .linkedin {
+  color: var(--color-btn-bg-white);
+}
+
+[data-theme="light"] .email {
+  border: 1px solid rgb(203, 203, 203);
+}
+
+[data-theme="light"] .section-text {
+  color: #4a4e74;
 }
